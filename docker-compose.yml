@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    image: ozanemrahyakupoglu/may-web:${VERSION:-1.0.0}
+    container_name: may-web
+    ports:
+      - "8091:8091"
