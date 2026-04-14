@@ -9,6 +9,9 @@ import {
   LogoutOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
+  AppstoreOutlined,
+  FileSearchOutlined,
+  ExperimentOutlined,
 } from '@ant-design/icons';
 import type { ReactNode } from 'react';
 import { Outlet, useNavigate, useLocation, Navigate } from 'react-router-dom';
@@ -29,6 +32,9 @@ const allMenuItems: MenuItemDef[] = [
   { key: '/users', icon: <UserOutlined />, label: 'Kullanıcılar', requiredPermission: 'USER_READ', group: 'YÖNETİM' },
   { key: '/roles', icon: <CrownOutlined />, label: 'Roller', requiredPermission: 'ROLES_READ', group: 'YÖNETİM' },
   { key: '/permissions', icon: <SafetyOutlined />, label: 'Yetkiler', requiredPermission: 'PERMISSION_READ', group: 'YÖNETİM' },
+  { key: '/modules', icon: <AppstoreOutlined />, label: 'Modüller', requiredPermission: 'MODULE_READ', group: 'OPERASYON' },
+  { key: '/analyses', icon: <FileSearchOutlined />, label: 'Analizler', requiredPermission: 'ANALYSIS_READ', group: 'OPERASYON' },
+  { key: '/tests', icon: <ExperimentOutlined />, label: 'Testler', requiredPermission: 'TEST_READ', group: 'OPERASYON' },
   { key: '/settings', icon: <SettingOutlined />, label: 'Ayarlar', group: 'GENEL' },
 ];
 
