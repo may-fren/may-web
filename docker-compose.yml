@@ -4,4 +4,4 @@ services:
     image: ozanemrahyakupoglu/may-web:${VERSION:-1.0.0}
     container_name: may-web
     ports:
-      - "8091:8091"
+      - "7002:7002"
