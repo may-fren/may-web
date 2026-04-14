@@ -1,16 +1,16 @@
 # Docker Commands - may-web
 
 ## Build
-docker build -t ozanemrahyakupoglu/may-web:1.0.0 .
+docker build -t ozanemrahyakupoglu/may-web:1.0.2 .
 
 ## Push (Docker Hub)
-docker push ozanemrahyakupoglu/may-web:1.0.0
+docker push ozanemrahyakupoglu/may-web:1.0.2
 
 ## Run
 docker run -d \
   --name may-web \
   -p 8091:8091 \
-  ozanemrahyakupoglu/may-web:1.0.0
+  ozanemrahyakupoglu/may-web:1.0.2
 
 ---
 
@@ -20,16 +20,16 @@ docker run -d \
 docker compose build
 
 ## Build (with version)
-VERSION=1.0.1 docker compose build
+VERSION=1.0.2 docker compose build
 
 ## Push (Docker Hub)
 docker compose push
 
 ## Push (with version)
-VERSION=1.0.1 docker compose push
+VERSION=1.0.2 docker compose push
 
 ## Run
 docker compose up -d
 
 ## Run (with version)
-VERSION=1.0.1 docker compose up -d
+VERSION=1.0.2 docker compose up -d
