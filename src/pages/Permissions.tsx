@@ -274,13 +274,13 @@ export default function Permissions() {
       >
         <Form form={form} layout="vertical">
           <Form.Item name="name" label="Yetki Adı" rules={[{ required: true, message: 'Zorunlu alan' }]}>
-            <Input placeholder="Örn: PATIENT_CREATE" />
+            <Input placeholder="Örn: PERMISSION_CREATE" />
           </Form.Item>
           <Form.Item name="description" label="Açıklama" rules={[{ required: true, message: 'Zorunlu alan' }]}>
-            <Input placeholder="Örn: Hasta oluşturma" />
+            <Input placeholder="Örn: Yetki oluşturma" />
           </Form.Item>
           <Form.Item name="module" label="Modül" rules={[{ required: true, message: 'Zorunlu alan' }]}>
-            <Input placeholder="Örn: PATIENT" />
+            <Input placeholder="Örn: PERMISSION" />
           </Form.Item>
           <Form.Item name="action" label="Aksiyon" rules={[{ required: true, message: 'Zorunlu alan' }]}>
             <Select placeholder="Seçiniz">
