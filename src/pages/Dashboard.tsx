@@ -9,25 +9,25 @@ export default function Dashboard() {
     {
       title: 'Kullanıcılar',
       icon: <UserOutlined />,
-      iconBg: '#e8f0fd',
-      iconColor: '#6a8ac4',
-      accentColor: '#6a8ac4',
+      iconBg: '#eef1f8',
+      iconColor: '#1a2744',
+      accentColor: '#1a2744',
       description: 'Sistem kullanıcıları',
     },
     {
       title: 'Roller',
       icon: <CrownOutlined />,
-      iconBg: '#f5eafe',
-      iconColor: '#9c6ac4',
-      accentColor: '#9c6ac4',
+      iconBg: '#fdedef',
+      iconColor: '#d41920',
+      accentColor: '#d41920',
       description: 'Tanımlı roller',
     },
     {
       title: 'Yetkiler',
       icon: <SafetyOutlined />,
-      iconBg: '#fde8f0',
-      iconColor: '#c4789a',
-      accentColor: '#c4789a',
+      iconBg: '#e8f5ee',
+      iconColor: '#2e8b57',
+      accentColor: '#2e8b57',
       description: 'Tanımlı yetkiler',
     },
   ];
@@ -40,13 +40,13 @@ export default function Dashboard() {
         alignItems: 'flex-start',
         marginBottom: 28,
         paddingBottom: 24,
-        borderBottom: '1px solid #f5d8e5',
+        borderBottom: '1px solid #e2e8f0',
       }}>
         <div>
-          <Typography.Title level={3} style={{ margin: 0, fontWeight: 800, color: '#3d1020' }}>
+          <Typography.Title level={3} style={{ margin: 0, fontWeight: 800, color: '#1a2744' }}>
             Merhaba, {user?.username}
           </Typography.Title>
-          <Typography.Text style={{ fontSize: 14, color: '#c490aa' }}>
+          <Typography.Text style={{ fontSize: 14, color: '#8a95a8' }}>
             MAY yönetim paneline genel bakış
           </Typography.Text>
         </div>
@@ -58,7 +58,7 @@ export default function Dashboard() {
             <Card
               style={{
                 borderRadius: 16,
-                border: '1px solid #f5d8e5',
+                border: '1px solid #e2e8f0',
                 overflow: 'hidden',
                 boxShadow: 'none',
               }}
@@ -84,19 +84,19 @@ export default function Dashboard() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: 4,
-                    color: '#4a9e6b',
+                    color: '#2e8b57',
                     fontSize: 12,
                     fontWeight: 600,
-                    background: '#d4eedc',
+                    background: '#e8f5ee',
                     padding: '3px 8px',
                     borderRadius: 20,
                   }}>
                     <ArrowUpOutlined style={{ fontSize: 10 }} /> Aktif
                   </div>
                 </div>
-                <Divider style={{ margin: '0 0 14px', borderColor: '#f5d8e5' }} />
-                <div style={{ color: '#5a2a3a', fontSize: 14, fontWeight: 700 }}>{card.title}</div>
-                <div style={{ color: '#c490aa', fontSize: 12, marginTop: 2 }}>{card.description}</div>
+                <Divider style={{ margin: '0 0 14px', borderColor: '#e2e8f0' }} />
+                <div style={{ color: '#1a2744', fontSize: 14, fontWeight: 700 }}>{card.title}</div>
+                <div style={{ color: '#8a95a8', fontSize: 12, marginTop: 2 }}>{card.description}</div>
               </div>
             </Card>
           </Col>

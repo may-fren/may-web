@@ -30,7 +30,7 @@ export default function Login() {
       {/* Sol: Marka paneli */}
       <div style={{
         width: '44%',
-        background: 'linear-gradient(160deg, #6a1040 0%, #c4789a 55%, #e8a8c0 100%)',
+        background: 'linear-gradient(160deg, #0e1a30 0%, #1a2744 40%, #2d4470 100%)',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -41,56 +41,42 @@ export default function Login() {
         {/* Dekoratif daireler */}
         <div style={{
           position: 'absolute', width: 500, height: 500, borderRadius: '50%',
-          background: 'rgba(255,255,255,0.05)', top: -180, right: -200,
+          background: 'rgba(212,25,32,0.06)', top: -180, right: -200,
         }} />
         <div style={{
           position: 'absolute', width: 320, height: 320, borderRadius: '50%',
-          background: 'rgba(255,255,255,0.06)', bottom: -100, left: -120,
+          background: 'rgba(255,255,255,0.03)', bottom: -100, left: -120,
         }} />
         <div style={{
           position: 'absolute', width: 200, height: 200, borderRadius: '50%',
-          background: 'rgba(255,255,255,0.04)', bottom: 180, right: -60,
+          background: 'rgba(212,25,32,0.04)', bottom: 180, right: -60,
+        }} />
+
+        {/* Kırmızı dekoratif çizgi */}
+        <div style={{
+          position: 'absolute',
+          bottom: 120,
+          left: 0,
+          right: 0,
+          height: 3,
+          background: 'linear-gradient(90deg, transparent, #d41920, transparent)',
+          opacity: 0.4,
         }} />
 
         {/* Logo */}
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <div style={{
-            width: 48,
-            height: 48,
-            borderRadius: 14,
-            background: 'rgba(255,255,255,0.2)',
-            backdropFilter: 'blur(8px)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: 22,
-            fontWeight: 800,
-            color: '#fff',
-            border: '1px solid rgba(255,255,255,0.3)',
-          }}>
-            M
-          </div>
+          <img src="/logo-white.svg" alt="MAY" style={{ height: 64 }} />
         </div>
 
         {/* Orta: Slogan */}
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <Typography.Title level={1} style={{
-            color: '#fff',
-            fontWeight: 800,
-            fontSize: 38,
-            lineHeight: 1.2,
-            margin: 0,
-            marginBottom: 16,
-          }}>
-            MAY
-          </Typography.Title>
           <Typography.Text style={{
-            color: 'rgba(255,255,255,0.80)',
+            color: 'rgba(255,255,255,0.70)',
             fontSize: 16,
             lineHeight: 1.7,
             display: 'block',
           }}>
-            Modern yönetim platformu.
+            Güvenliğinizin Sembolü
           </Typography.Text>
 
           {/* Özellik listesi */}
@@ -99,11 +85,11 @@ export default function Login() {
               <div key={f} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <div style={{
                   width: 20, height: 20, borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.25)',
+                  background: 'rgba(212,25,32,0.3)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: 10, color: '#fff', flexShrink: 0,
                 }}>✓</div>
-                <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: 14 }}>{f}</span>
+                <span style={{ color: 'rgba(255,255,255,0.75)', fontSize: 14 }}>{f}</span>
               </div>
             ))}
           </div>
@@ -111,8 +97,8 @@ export default function Login() {
 
         {/* Alt */}
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <Typography.Text style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13 }}>
-            © 2025 MAY. Tüm hakları saklıdır.
+          <Typography.Text style={{ color: 'rgba(255,255,255,0.35)', fontSize: 13 }}>
+            © 2025 MAY Fren Sistemleri. Tüm hakları saklıdır.
           </Typography.Text>
         </div>
       </div>
@@ -123,15 +109,15 @@ export default function Login() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        background: '#fdf5f8',
+        background: '#f3f5f9',
         padding: '48px 40px',
       }}>
         <div style={{ width: '100%', maxWidth: 380 }}>
           <div style={{ marginBottom: 36 }}>
-            <Typography.Title level={2} style={{ margin: 0, fontWeight: 800, color: '#3d1020' }}>
+            <Typography.Title level={2} style={{ margin: 0, fontWeight: 800, color: '#1a2744' }}>
               Tekrar hoş geldiniz
             </Typography.Title>
-            <Typography.Text style={{ color: '#c490aa', fontSize: 15 }}>
+            <Typography.Text style={{ color: '#8a95a8', fontSize: 15 }}>
               Devam etmek için giriş yapın
             </Typography.Text>
           </div>
@@ -139,22 +125,22 @@ export default function Login() {
           <Form onFinish={onFinish} autoComplete="off" size="large" layout="vertical">
             <Form.Item
               name="username"
-              label={<span style={{ color: '#5a2a3a', fontWeight: 600 }}>Kullanıcı Adı</span>}
+              label={<span style={{ color: '#1a2744', fontWeight: 600 }}>Kullanıcı Adı</span>}
               rules={[{ required: true, message: 'Kullanıcı adı gerekli' }]}
             >
               <Input
-                prefix={<UserOutlined style={{ color: '#c4789a' }} />}
+                prefix={<UserOutlined style={{ color: '#d41920' }} />}
                 placeholder="Kullanıcı adınızı girin"
                 style={{ height: 48, borderRadius: 10 }}
               />
             </Form.Item>
             <Form.Item
               name="password"
-              label={<span style={{ color: '#5a2a3a', fontWeight: 600 }}>Şifre</span>}
+              label={<span style={{ color: '#1a2744', fontWeight: 600 }}>Şifre</span>}
               rules={[{ required: true, message: 'Şifre gerekli' }]}
             >
               <Input.Password
-                prefix={<LockOutlined style={{ color: '#c4789a' }} />}
+                prefix={<LockOutlined style={{ color: '#d41920' }} />}
                 placeholder="Şifrenizi girin"
                 style={{ height: 48, borderRadius: 10 }}
               />

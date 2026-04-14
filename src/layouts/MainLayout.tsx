@@ -85,7 +85,7 @@ export default function MainLayout() {
         width={240}
         style={{
           background: '#fff',
-          borderRight: '1px solid #f5d8e5',
+          borderRight: '1px solid #e2e8f0',
           overflow: 'auto',
           position: 'fixed',
           left: 0,
@@ -101,30 +101,19 @@ export default function MainLayout() {
           alignItems: 'center',
           gap: 10,
           padding: collapsed ? '0 22px' : '0 20px',
-          borderBottom: '1px solid #f5d8e5',
+          borderBottom: '1px solid #e2e8f0',
         }}>
-          <div style={{
-            width: 32,
-            height: 32,
-            borderRadius: 8,
-            background: 'linear-gradient(135deg, #c4789a, #e8a8c0)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: 16,
-            fontWeight: 800,
-            color: '#fff',
-            flexShrink: 0,
-          }}>
-            M
-          </div>
-          {!collapsed && (
-            <div>
-              <div style={{ color: '#3d1020', fontSize: 15, fontWeight: 700, lineHeight: 1.2 }}>
-                MAY
-              </div>
-            </div>
-          )}
+          <img
+            src="/logo.svg"
+            alt="MAY"
+            style={{
+              height: 36,
+              width: collapsed ? 32 : 'auto',
+              objectFit: 'contain',
+              objectPosition: 'left',
+              flexShrink: 0,
+            }}
+          />
         </div>
 
         <Menu
@@ -144,7 +133,7 @@ export default function MainLayout() {
       <Layout style={{
         marginLeft: collapsed ? 80 : 240,
         transition: 'margin-left 0.2s',
-        background: '#fdf5f8',
+        background: '#f3f5f9',
         minHeight: '100vh',
       }}>
         {/* Header */}
@@ -154,7 +143,7 @@ export default function MainLayout() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          borderBottom: '1px solid #f5d8e5',
+          borderBottom: '1px solid #e2e8f0',
           position: 'sticky',
           top: 0,
           zIndex: 9,
@@ -165,14 +154,14 @@ export default function MainLayout() {
               type="text"
               icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
               onClick={() => setCollapsed(!collapsed)}
-              style={{ fontSize: 16, width: 36, height: 36, color: '#8a5070' }}
+              style={{ fontSize: 16, width: 36, height: 36, color: '#1a2744' }}
             />
             <div>
-              <Typography.Text style={{ fontSize: 16, fontWeight: 700, color: '#3d1020', display: 'block', lineHeight: 1.2 }}>
+              <Typography.Text style={{ fontSize: 16, fontWeight: 700, color: '#1a2744', display: 'block', lineHeight: 1.2 }}>
                 {currentPage}
               </Typography.Text>
-              <Typography.Text style={{ fontSize: 12, color: '#c490aa' }}>
-                MAY
+              <Typography.Text style={{ fontSize: 12, color: '#8a95a8' }}>
+                MAY Fren Sistemleri
               </Typography.Text>
             </div>
           </div>
@@ -185,17 +174,17 @@ export default function MainLayout() {
               cursor: 'pointer',
               padding: '6px 14px 6px 6px',
               borderRadius: 40,
-              border: '1px solid #f5d8e5',
-              background: '#fffafc',
+              border: '1px solid #e2e8f0',
+              background: '#f8f9fc',
               transition: 'all 0.2s',
             }}
-              onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#c9834a')}
-              onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#f5d8e5')}
+              onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#d41920')}
+              onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#e2e8f0')}
             >
               <Avatar
                 size={32}
                 style={{
-                  background: 'linear-gradient(135deg, #c4789a, #e8a8c0)',
+                  background: 'linear-gradient(135deg, #1a2744, #2d4470)',
                   fontWeight: 700,
                   fontSize: 13,
                   color: '#fff',
@@ -204,7 +193,7 @@ export default function MainLayout() {
                 {user.username.substring(0, 2).toUpperCase()}
               </Avatar>
               {!collapsed && (
-                <Typography.Text strong style={{ fontSize: 13, color: '#3d1020' }}>
+                <Typography.Text strong style={{ fontSize: 13, color: '#1a2744' }}>
                   {user.username}
                 </Typography.Text>
               )}
@@ -218,7 +207,7 @@ export default function MainLayout() {
           background: '#fff',
           borderRadius: borderRadiusLG,
           minHeight: 280,
-          border: '1px solid #f5d8e5',
+          border: '1px solid #e2e8f0',
         }}>
           <Outlet />
         </Content>

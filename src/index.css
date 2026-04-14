@@ -6,7 +6,7 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #fdf5f8;
+  background: #f3f5f9;
 }
 
 /* Smooth transitions */
@@ -27,7 +27,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d1d5db;
+  background: #c5cdd8;
   border-radius: 3px;
 }
 
@@ -37,8 +37,8 @@ body {
 
 /* Selection */
 ::selection {
-  background: #fde8f0;
-  color: #3d1020;
+  background: #fdedef;
+  color: #1a2744;
 }
 
 /* Ant Design table header */
@@ -60,26 +60,26 @@ body {
 }
 
 .ant-card:hover {
-  box-shadow: 0 4px 16px rgba(180,100,40,0.10) !important;
+  box-shadow: 0 4px 16px rgba(26,39,68,0.10) !important;
   transform: translateY(-1px);
 }
 
 /* Button focus ring */
 .ant-btn-primary:focus-visible {
-  outline: 2px solid #e8a8c0;
+  outline: 2px solid #d41920;
   outline-offset: 2px;
 }
 
 /* Sidebar menu group başlıkları */
 .may-menu .ant-menu-item-group-title {
-  color: #d4a8bc !important;
+  color: #8a95a8 !important;
   font-size: 10px !important;
   font-weight: 700 !important;
   letter-spacing: 1.2px !important;
   padding: 12px 20px 4px !important;
 }
 
-/* Sidebar menu item sol çizgi göstergesi */
+/* Sidebar menu item */
 .may-menu .ant-menu-item {
   height: 40px !important;
   line-height: 40px !important;

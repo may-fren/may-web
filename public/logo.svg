@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100">
+  <!-- Red arc/swoosh above MAY -->
+  <path d="M28 30 Q70 2, 112 30" stroke="#d41920" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- Small curve end accent -->
+  <circle cx="112" cy="30" r="4" fill="#d41920"/>
+  <!-- MAY text -->
+  <text x="70" y="62" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="42" fill="#1a2744" text-anchor="middle" letter-spacing="2">MAY</text>
+  <!-- Registered mark -->
+  <text x="117" y="42" font-family="Arial, sans-serif" font-size="8" fill="#1a2744">®</text>
+  <!-- Divider line -->
+  <line x1="28" y1="68" x2="112" y2="68" stroke="#8a95a8" stroke-width="0.5"/>
+  <!-- FREN SİSTEMLERİ -->
+  <text x="70" y="79" font-family="Arial, sans-serif" font-weight="700" font-size="9" fill="#1a2744" text-anchor="middle" letter-spacing="1.5">FREN SİSTEMLERİ</text>
+  <!-- BRAKE SYSTEMS -->
+  <text x="70" y="91" font-family="Arial, sans-serif" font-weight="700" font-size="8" fill="#d41920" text-anchor="middle" letter-spacing="1.8">BRAKE SYSTEMS</text>
+</svg>

@@ -16,31 +16,31 @@ export default function App() {
       locale={trTR}
       theme={{
         token: {
-          colorPrimary: '#c4789a',
-          colorSuccess: '#6aa884',
-          colorWarning: '#c49a6a',
-          colorError: '#c46a78',
-          colorInfo: '#7a9ec4',
+          colorPrimary: '#d41920',
+          colorSuccess: '#2e8b57',
+          colorWarning: '#e8960c',
+          colorError: '#d41920',
+          colorInfo: '#1a2744',
           borderRadius: 12,
           fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-          colorBgLayout: '#fdf5f8',
+          colorBgLayout: '#f3f5f9',
           controlHeight: 38,
         },
         components: {
           Button: {
             borderRadius: 10,
             controlHeight: 38,
-            primaryShadow: '0 2px 10px rgba(196, 120, 154, 0.28)',
+            primaryShadow: '0 2px 10px rgba(212, 25, 32, 0.25)',
           },
           Card: {
             borderRadiusLG: 16,
-            boxShadowTertiary: '0 2px 8px rgba(180,80,120,0.06), 0 1px 2px rgba(0,0,0,0.04)',
+            boxShadowTertiary: '0 2px 8px rgba(26,39,68,0.06), 0 1px 2px rgba(0,0,0,0.04)',
           },
           Table: {
-            headerBg: '#fdf0f5',
-            headerColor: '#7a4a5a',
-            rowHoverBg: '#fffafc',
-            borderColor: '#f5d8e5',
+            headerBg: '#f0f2f8',
+            headerColor: '#1a2744',
+            rowHoverBg: '#f8f9fc',
+            borderColor: '#e2e8f0',
             headerBorderRadius: 10,
           },
           Input: {
@@ -57,10 +57,10 @@ export default function App() {
           },
           Menu: {
             itemBg: 'transparent',
-            itemSelectedBg: 'rgba(196,120,154,0.12)',
-            itemHoverBg: 'rgba(196,120,154,0.06)',
-            itemSelectedColor: '#c4789a',
-            itemColor: '#5a2a3a',
+            itemSelectedBg: 'rgba(212,25,32,0.08)',
+            itemHoverBg: 'rgba(26,39,68,0.04)',
+            itemSelectedColor: '#d41920',
+            itemColor: '#3d4f6f',
             itemBorderRadius: 10,
             itemMarginInline: 8,
             iconSize: 18,
