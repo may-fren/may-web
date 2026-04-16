@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useState, type ReactNode } from 'react';
-import { loginApi, logoutApi } from '../services/authService';
+import { loginApi, logoutApi, isSessionLimitError, type SessionLimitError } from '../services/authService';
 import { getAccessToken } from '../services/api';
 
 interface User {
@@ -8,12 +8,21 @@ interface User {
   permissions: string[];
 }
 
+export interface SessionLimitInfo {
+  activeSessions: SessionLimitError['activeSessions'];
+  username: string;
+  password: string;
+}
+
 interface AuthContextType {
   user: User | null;
-  login: (username: string, password: string) => Promise<void>;
+  login: (username: string, password: string, forceLogin?: boolean) => Promise<void>;
   logout: () => Promise<void>;
   hasPermission: (permission: string) => boolean;
   hasAnyPermission: (...permissions: string[]) => boolean;
+  sessionLimitInfo: SessionLimitInfo | null;
+  clearSessionLimit: () => void;
+  forceLogin: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType>(null!);
@@ -42,16 +51,37 @@ function getUserFromToken(): User | null {
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(getUserFromToken);
+  const [sessionLimitInfo, setSessionLimitInfo] = useState<SessionLimitInfo | null>(null);
 
-  const login = async (username: string, password: string) => {
-    const data = await loginApi({ username, password });
-    const payload = parseJwt(data.accessToken);
-    setUser({
-      username: payload.sub,
-      roles: payload.roles ?? [],
-      permissions: payload.permissions ?? [],
-    });
+  const login = async (username: string, password: string, forceLogin?: boolean) => {
+    try {
+      const data = await loginApi({ username, password, forceLogin });
+      const payload = parseJwt(data.accessToken);
+      setUser({
+        username: payload.sub,
+        roles: payload.roles ?? [],
+        permissions: payload.permissions ?? [],
+      });
+      setSessionLimitInfo(null);
+    } catch (error) {
+      if (isSessionLimitError(error)) {
+        setSessionLimitInfo({
+          activeSessions: error.response.data.activeSessions,
+          username,
+          password,
+        });
+        return;
+      }
+      throw error;
+    }
   };
+
+  const forceLogin = async () => {
+    if (!sessionLimitInfo) return;
+    await login(sessionLimitInfo.username, sessionLimitInfo.password, true);
+  };
+
+  const clearSessionLimit = () => setSessionLimitInfo(null);
 
   const logout = async () => {
     await logoutApi();
@@ -69,7 +99,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, hasPermission, hasAnyPermission }}>
+    <AuthContext.Provider value={{ user, login, logout, hasPermission, hasAnyPermission, sessionLimitInfo, clearSessionLimit, forceLogin }}>
       {children}
     </AuthContext.Provider>
   );

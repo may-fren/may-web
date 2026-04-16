@@ -31,7 +31,7 @@ api.interceptors.response.use(
         const { data } = await axios.post(
           `${API_BASE_URL}/auth/refresh`,
           {},
-          { withCredentials: true },
+          { withCredentials: true, headers: { 'X-Platform': 'WEB' } },
         );
 
         setAccessToken(data.accessToken);
