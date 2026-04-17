@@ -1,4 +1,4 @@
-import api, { setAccessToken, clearAccessToken } from './api';
+import api, { setAccessToken, clearAccessToken, setRefreshToken, getRefreshToken } from './api';
 
 interface LoginRequest {
   username: string;
@@ -8,6 +8,7 @@ interface LoginRequest {
 
 interface LoginResponse {
   accessToken: string;
+  refreshToken: string;
   tokenType: string;
   expiresIn: number;
   roles: string[];
@@ -34,12 +35,16 @@ export async function loginApi(credentials: LoginRequest): Promise<LoginResponse
     headers: { 'X-Platform': 'WEB' },
   });
   setAccessToken(data.accessToken);
+  if (data.refreshToken) {
+    setRefreshToken(data.refreshToken);
+  }
   return data;
 }
 
 export async function logoutApi(): Promise<void> {
   try {
-    await api.post('/auth/logout');
+    const refreshToken = getRefreshToken();
+    await api.post('/auth/logout', { refreshToken });
   } catch {
     // logout endpoint yoksa sessizce devam et
   } finally {

@@ -27,14 +27,17 @@ api.interceptors.response.use(
       originalRequest._retry = true;
 
       try {
-        // refreshToken httpOnly cookie olarak otomatik gönderilir
+        const storedRefreshToken = localStorage.getItem('refreshToken');
         const { data } = await axios.post(
           `${API_BASE_URL}/auth/refresh`,
-          {},
+          { refreshToken: storedRefreshToken },
           { withCredentials: true, headers: { 'X-Platform': 'WEB' } },
         );
 
         setAccessToken(data.accessToken);
+        if (data.refreshToken) {
+          setRefreshToken(data.refreshToken);
+        }
         originalRequest.headers.Authorization = `Bearer ${data.accessToken}`;
         return api(originalRequest);
       } catch {
@@ -54,10 +57,19 @@ export function setAccessToken(accessToken: string) {
 
 export function clearAccessToken() {
   localStorage.removeItem('accessToken');
+  localStorage.removeItem('refreshToken');
 }
 
 export function getAccessToken() {
   return localStorage.getItem('accessToken');
+}
+
+export function setRefreshToken(refreshToken: string) {
+  localStorage.setItem('refreshToken', refreshToken);
+}
+
+export function getRefreshToken() {
+  return localStorage.getItem('refreshToken');
 }
 
 export default api;
