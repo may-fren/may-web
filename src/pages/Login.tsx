@@ -74,7 +74,20 @@ export default function Login() {
       justifyContent: 'center',
       alignItems: 'center',
       padding: 24,
+      position: 'relative',
+      overflow: 'hidden',
     }}>
+      {/* Truck background silhouette */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: 'url(/truck_background.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: 0.06,
+        filter: 'grayscale(100%)',
+        pointerEvents: 'none',
+      }} />
       <div style={{
         width: '100%',
         maxWidth: 420,

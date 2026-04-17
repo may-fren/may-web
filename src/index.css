@@ -99,3 +99,10 @@ body {
 .ant-layout-header {
   box-shadow: none !important;
 }
+
+/* Truck background: Ant Design Layout arka planlarını transparan yap */
+.main-shell .ant-layout,
+.main-shell .ant-layout-has-sider,
+.main-shell > .ant-layout {
+  background: transparent !important;
+}

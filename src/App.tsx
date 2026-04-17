@@ -26,7 +26,7 @@ export default function App() {
           colorInfo: '#1a2744',
           borderRadius: 12,
           fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-          colorBgLayout: '#f3f5f9',
+          colorBgLayout: 'transparent',
           controlHeight: 38,
         },
         components: {

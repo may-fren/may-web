@@ -83,14 +83,27 @@ export default function MainLayout() {
   const currentPage = allMenuItems.find((i) => i.key === location.pathname)?.label ?? 'Sayfa';
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <div className="main-shell" style={{ minHeight: '100vh', background: '#f3f5f9', position: 'relative' }}>
+      {/* Truck background silhouette */}
+      <div style={{
+        position: 'fixed',
+        inset: 0,
+        backgroundImage: 'url(/truck_background.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: 0.18,
+        filter: 'grayscale(100%)',
+        pointerEvents: 'none',
+        zIndex: 0,
+      }} />
+    <Layout style={{ minHeight: '100vh', background: 'transparent', position: 'relative', zIndex: 1 }}>
       <Sider
         trigger={null}
         collapsible
         collapsed={collapsed}
         width={240}
         style={{
-          background: '#fff',
+          background: 'rgba(255, 255, 255, 0.8)',
           borderRight: '1px solid #e2e8f0',
           overflow: 'auto',
           position: 'fixed',
@@ -139,13 +152,13 @@ export default function MainLayout() {
       <Layout style={{
         marginLeft: collapsed ? 80 : 240,
         transition: 'margin-left 0.2s',
-        background: '#f3f5f9',
+        background: 'transparent',
         minHeight: '100vh',
       }}>
         {/* Header */}
         <Header style={{
           padding: '0 28px',
-          background: '#fff',
+          background: 'rgba(255, 255, 255, 0.65)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -154,6 +167,7 @@ export default function MainLayout() {
           top: 0,
           zIndex: 9,
           height: 64,
+          backdropFilter: 'blur(8px)',
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             <Button
@@ -210,7 +224,7 @@ export default function MainLayout() {
         <Content style={{
           margin: 24,
           padding: 28,
-          background: '#fff',
+          background: 'rgba(255, 255, 255, 0.65)',
           borderRadius: borderRadiusLG,
           minHeight: 280,
           border: '1px solid #e2e8f0',
@@ -219,5 +233,6 @@ export default function MainLayout() {
         </Content>
       </Layout>
     </Layout>
+    </div>
   );
 }
