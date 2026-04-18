@@ -105,8 +105,9 @@ export default function Login() {
         <div style={{
           background: '#fff',
           borderRadius: 16,
-          padding: '36px 32px',
-          boxShadow: '0 2px 12px rgba(26,39,68,0.08)',
+          padding: '40px 36px',
+          boxShadow: '0 12px 48px rgba(26,39,68,0.25), 0 2px 8px rgba(26,39,68,0.1)',
+          border: '1px solid rgba(26,39,68,0.12)',
         }}>
           <div style={{ marginBottom: 28, textAlign: 'center' }}>
             <Typography.Title level={3} style={{ margin: 0, fontWeight: 700, color: '#1a2744' }}>
