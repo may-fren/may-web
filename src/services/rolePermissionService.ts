@@ -1,4 +1,5 @@
 import api from './api';
+import type { PageResponse } from './userService';
 
 export interface RolePermissionResponse {
   id: number;
@@ -16,8 +17,10 @@ export interface RolePermissionRequest {
 }
 
 export async function getPermissionsByRoleId(roleId: number): Promise<RolePermissionResponse[]> {
-  const { data } = await api.get<RolePermissionResponse[]>(`/role-permissions/role/${roleId}`);
-  return data;
+  const { data } = await api.get<PageResponse<RolePermissionResponse>>(`/role-permissions/role/${roleId}`, {
+    params: { page: 0, size: 1000 },
+  });
+  return data.content;
 }
 
 export async function assignPermissionToRole(payload: RolePermissionRequest): Promise<RolePermissionResponse> {
