@@ -20,16 +20,16 @@ docker run -d \
 docker compose build
 
 ## Build (with version)
-VERSION=1.0.4 docker compose build
+VERSION=1.0.6 docker compose build
 
 ## Push (Docker Hub)
 docker compose push
 
 ## Push (with version)
-VERSION=1.0.4 docker compose push
+VERSION=1.0.6 docker compose push
 
 ## Run
 docker compose up -d
 
 ## Run (with version)
-VERSION=1.0.4 docker compose up -d
+VERSION=1.0.6 docker compose up -d
