@@ -11,6 +11,7 @@ import Permissions from './pages/Permissions';
 import Modules from './pages/Modules';
 import Analyses from './pages/Analyses';
 import Tests from './pages/Tests';
+import Services from './pages/Services';
 import Settings from './pages/Settings';
 
 export default function App() {
@@ -94,6 +95,7 @@ export default function App() {
               <Route path="/modules" element={<Modules />} />
               <Route path="/analyses" element={<Analyses />} />
               <Route path="/tests" element={<Tests />} />
+              <Route path="/services" element={<Services />} />
               <Route path="/settings" element={<Settings />} />
             </Route>
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
