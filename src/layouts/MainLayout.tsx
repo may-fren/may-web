@@ -125,10 +125,10 @@ export default function MainLayout() {
           borderBottom: '1px solid #e2e8f0',
         }}>
           <img
-            src="/logo.svg"
-            alt="MAY"
+            src="/may-logo.png"
+            alt="MAY Fren Sistemleri"
             style={{
-              height: 36,
+              height: 40,
               width: collapsed ? 32 : 'auto',
               objectFit: 'contain',
               objectPosition: 'left',
